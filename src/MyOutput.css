@@ -1,0 +1,10 @@
+.show {
+    background-color:rgb(255, 233, 133);
+    height: 130px;
+    padding: 20px;
+    text-align: center;
+    border-collapse:collapse;
+    border: 1px #000 solid;
+    width: 100%;
+  }
+

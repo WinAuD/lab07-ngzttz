@@ -1,0 +1,18 @@
+.button {
+    background-color: #AAA;
+    font-weight: bold;
+    font-size: 32px;
+    border-radius: 15%;
+    width: 60px;
+    height: 60px;
+  }
+  
+.niceButtons {
+    background-color: transparent;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 32px;
+}
+
