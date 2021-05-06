@@ -5,8 +5,8 @@ import MyOutput from "./MyOutput";
 function App() {
   return (
     <div className="App">
-      <MyInput/>
-      <MyOutput/>
+      <MyInput />
+      <MyOutput />
     </div>
   );
 }

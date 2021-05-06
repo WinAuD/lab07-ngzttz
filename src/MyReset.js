@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import './MyReset.css';
+import "./MyReset.css";
 
 export default function MyInput() {
-    const handleClick = () => {
-        alert("Alles zurücksetzen!")
-    }
+  const handleClick = () => {
+    alert("Alles zurücksetzen!");
+  };
 
-    return (
-        <div >
-            <button className="button" onClick={handleClick}>R</button>
-        </div>
-    );
+  return (
+    <div>
+      <button className="button" onClick={handleClick}>
+        R
+      </button>
+    </div>
+  );
 }
