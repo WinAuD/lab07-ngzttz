@@ -10,8 +10,7 @@ export default function TextInput() {
 
   const handleChange = event => {
     setText(event.target.value);
-    dispatch( {type: 'fontSize/setTo', payload: "event.target.text"} );
-    alert("Text: " + store.getState().text);
+    dispatch( {type: 'fontSize/setTo', payload: event.target.value} );
   };
 
   return (
