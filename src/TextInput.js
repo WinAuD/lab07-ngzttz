@@ -29,14 +29,7 @@ export default function TextInput() {
   const textInput = useSelector( (state) => state.text );
   const dispatch = useDispatch(); 
 
-  const handleChange = event => {
-    setText(event.target.value);
-    dispatch( {type: 'fontSize/setTo', paylaod: text} )
-  };
+  
 
-  return (
-    <div>
-      <input className="NiceInput" type="text" onChange={handleChange } value={text} />
-    </div>
-  );
+ 
 } */

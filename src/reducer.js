@@ -21,6 +21,13 @@ export default function fontSizeReducer(state = initialState, action) {
         text: action.payload
       };
     }
+    case "fontSize/reset": {
+      return {
+        ...state,
+        size: initialState.size,
+        text: initialState.text
+      };
+    }
     case "fontSize/fetchWiki": {
       return {
         ...state,
