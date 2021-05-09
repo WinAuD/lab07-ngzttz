@@ -1,6 +1,6 @@
 import { createStore } from "redux";
-import counterReducer from "./reducer.js";
+import fontSizeReducer from "./reducer.js";
 
-const store = createStore(counterReducer);
+const store = createStore(fontSizeReducer);
 
 export default store;

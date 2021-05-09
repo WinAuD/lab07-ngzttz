@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./MyReset.css";
 
 export default function MyInput() {
+  
   const handleClick = () => {
     alert("Alles zurücksetzen!");
   };

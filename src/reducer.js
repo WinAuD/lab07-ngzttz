@@ -1,24 +1,30 @@
 const initialState = { size: 16, text: "!" }
 
-export default function fontReducer(state = initialState, action) {
+export default function fontSizeReducer(state = initialState, action) {
   switch (action.type) {
-    case "counter/inc1": {
+    case "fontSize/inc1": {
       // State replacement, not merged, state is immutable
       return {
         ...state,
-        count: state.count + 1
+        size: state.size + 1
       };
     }
-    case "counter/dec1": {
+    case "fontSize/dec1": {
       return {
         ...state,
-        count: state.count - 1
+        size: state.size - 1
       };
     }
-    case "counter/setTo": {
+    case "fontSize/setTo": {
       return {
         ...state,
-        count: action.payload
+        size: action.payload
+      };
+    }
+    case "fontSize/fetchWiki": {
+      return {
+        ...state,
+        size: action.payload
       };
     }
     default:
