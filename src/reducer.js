@@ -18,13 +18,13 @@ export default function fontSizeReducer(state = initialState, action) {
     case "fontSize/setTo": {
       return {
         ...state,
-        size: action.payload
+        text: action.payload
       };
     }
     case "fontSize/fetchWiki": {
       return {
         ...state,
-        size: action.payload
+        text: action.payload
       };
     }
     default:
