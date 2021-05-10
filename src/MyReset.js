@@ -13,9 +13,13 @@ export default function MyInput() {
 
   return (
     <div>
-      <button className="button" onClick={handleClick}>
+      {/* <button className="button" onClick={handleClick}>
         R
+      </button> */}
+      <button className="button" onClick={() => fetchWiki() }>
+        Fetch Wiki
       </button>
     </div>
   );
 }
+

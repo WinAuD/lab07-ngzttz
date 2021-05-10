@@ -1,5 +1,3 @@
-import { createStore, applyMiddleware } from 'redux'
-
 const initialState = { size: 16, text: "!" }
 
 export default function fontSizeReducer(state = initialState, action) {
@@ -45,11 +43,10 @@ export default function fontSizeReducer(state = initialState, action) {
 export async function fetchWiki() {
     alert("fetch");
     const response = await 
-    axios.get(`https://de.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&titles=${text}`) 
+    axios.get(`https://de.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&titles=${getState().text}`) 
     const res = getTextFromAxios(response.data); 
 
-    alert('PLZ ' + response.data.postal);
-    dispatch({ type: 'counter/setTo', payload: response.data.postal })
+    dispatch({ type: 'fontSize/fetchWiki', payload: res })
 }
 
 function getTextFromAxios(responseObj) { 
