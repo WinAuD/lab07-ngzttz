@@ -27,9 +27,4 @@ import { useSelector, useDispatch } from 'react-redux';
 export default function TextInput() {
   const [text, setText] = useState("?");
   const textInput = useSelector( (state) => state.text );
-  const dispatch = useDispatch(); 
-
-  
-
- 
 } */

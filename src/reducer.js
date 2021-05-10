@@ -1,3 +1,5 @@
+import { createStore, applyMiddleware } from 'redux'
+
 const initialState = { size: 16, text: "!" }
 
 export default function fontSizeReducer(state = initialState, action) {
@@ -37,4 +39,23 @@ export default function fontSizeReducer(state = initialState, action) {
     default:
       return state;
   }
+}
+
+// Thunk function
+export async function fetchWiki() {
+    alert("fetch");
+    const response = await 
+    axios.get(`https://de.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&titles=${text}`) 
+    const res = getTextFromAxios(response.data); 
+
+    alert('PLZ ' + response.data.postal);
+    dispatch({ type: 'counter/setTo', payload: response.data.postal })
+}
+
+function getTextFromAxios(responseObj) { 
+  let str = "---"; 
+  if (responseObj.query == undefined) return"---"; 
+  const keyVal = Object.keys(responseObj.query.pages);     
+  str = responseObj.query.pages[keyVal].extract; 
+  return str; 
 }
