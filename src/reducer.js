@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const initialState = { size: 16, text: "!" }
 
 export default function fontSizeReducer(state = initialState, action) {
@@ -40,11 +42,15 @@ export default function fontSizeReducer(state = initialState, action) {
 }
 
 // Thunk function
-export async function fetchWiki() {
+export async function fetchWiki(dispatch, getState) {
     alert("fetch");
-    const response = await 
-    axios.get(`https://de.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&titles=${getState().text}`) 
+    const response = await axios.get(`https://de.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&titles=${getState().text}`) 
+alert("response" + response);
+
     const res = getTextFromAxios(response.data); 
+
+    alert("response" + response);
+    alert(res);
 
     dispatch({ type: 'fontSize/fetchWiki', payload: res })
 }
@@ -56,3 +62,18 @@ function getTextFromAxios(responseObj) {
   str = responseObj.query.pages[keyVal].extract; 
   return str; 
 }
+
+// // Write a synchronous outer function that receives the `text` parameter:
+// export function fetchWikiWithText(text) {
+//   // Thunk function
+//   return async function fetchWiki(dispatch, getState) {
+//     alert("fetch");
+//     const response = await axios.get(`https://de.wikipedia.org/w/api.php?action=query&origin=*&prop=extracts&format=json&titles=${getState().text}`)
+//     const res = getTextFromAxios(response.data);
+
+//     alert("res");
+//     alert(res);
+
+//     dispatch({ type: 'fontSize/fetchWiki', payload: res })
+//   }
+// }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./MyReset.css";
 import { useDispatch } from 'react-redux';
+import { fetchWiki } from './reducer';
 
 export default function MyInput() {
 
@@ -16,7 +17,7 @@ export default function MyInput() {
       {/* <button className="button" onClick={handleClick}>
         R
       </button> */}
-      <button className="button" onClick={() => fetchWiki() }>
+      <button className="button" onClick={() => dispatch(fetchWiki) }>
         Fetch Wiki
       </button>
     </div>
